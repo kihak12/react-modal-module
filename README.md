@@ -3,6 +3,7 @@
 A lightweight, typed React modal component you can drop into any application. It allows you to display a modal with an optional title, content text, and configurable action buttons.
 
 ## Features
+
 - Zero configuration to get started
 - Optional title and text content
 - Confirm and Cancel buttons with customizable labels
@@ -23,19 +24,19 @@ This library targets React 19.
 ## Quick Start
 
 ```tsx
-import React, { useState } from 'react';
-import { ModalComponent } from 'modal-module-kihak12';
+import React, { useState } from "react";
+import { ModalComponent } from "modal-module-kihak12";
 
 export default function Example() {
   const [open, setOpen] = useState(true);
 
   const handleClose = () => setOpen(false);
   const handleConfirm = () => {
-    console.log('Confirmed');
+    console.log("Confirmed");
     setOpen(false);
   };
   const handleCancel = () => {
-    console.log('Cancelled');
+    console.log("Cancelled");
     setOpen(false);
   };
 
@@ -66,6 +67,7 @@ Note: The component renders itself when included. You control its visibility by 
 ## API
 
 ModalComponent props:
+
 - title?: string
 - textContent?: string
 - showConfirmButton?: boolean (default: true)
@@ -77,6 +79,7 @@ ModalComponent props:
 - onCancel?: () => void
 
 Behavior notes:
+
 - The Close button (X) triggers onClose.
 - Confirm and Cancel buttons trigger onConfirm and onCancel respectively when shown.
 - If you omit showCancelButton, only the Confirm button will be displayed by default.
@@ -92,6 +95,7 @@ The component references an icon at `/assets/close-x.svg` for the close button i
 ## TypeScript
 
 Type definitions are published with the package. Import paths work with both ESM and CJS environments:
+
 - ESM: `import { ModalComponent } from 'modal-module-kihak12'`
 - CJS: `const { ModalComponent } = require('modal-module-kihak12')`
 
@@ -110,15 +114,18 @@ npm run build
 ```
 
 The build outputs to `dist/` with the following fields used by consumers:
+
 - main: UMD bundle
 - module: ESM bundle
 - types: TypeScript declarations
 - style: compiled CSS
 
 ## Troubleshooting
+
 - The close icon does not display: make sure `/assets/close-x.svg` exists in your host app. Adjust the path or replace the asset as needed.
 - Buttons not appearing: verify `showConfirmButton` and `showCancelButton` flags.
 - Styles not applied: ensure your bundler handles CSS imports (Vite/CRA/Next.js typically do). The package declares CSS as sideEffects to prevent tree-shaking.
 
 ## License
+
 ISC

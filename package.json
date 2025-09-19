@@ -1,6 +1,6 @@
 {
   "name": "modal-module-kihak12",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./dist/modal-react.umd.js",
   "module": "./dist/modal-react.mjs",
   "types": "./dist/index.d.ts",
