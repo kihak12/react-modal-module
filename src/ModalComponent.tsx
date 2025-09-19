@@ -1,4 +1,5 @@
 import styles from "./ModalComponent.module.css";
+import closeIcon from "./assets/close-x.svg";
 
 export const ModalComponent = (props: ModalProps) => {
   const modalData = { ...defaultProps, ...props };
@@ -41,7 +42,6 @@ export const ModalComponent = (props: ModalProps) => {
   const cancelButtonElement = () => {
     return (
       <>
-        *
         <button
           className={[styles.modalActionButton, styles.btnDanger].join(" ")}
           onClick={modalData.onCancel}
@@ -57,7 +57,7 @@ export const ModalComponent = (props: ModalProps) => {
       <div className={styles.modalContainer}>
         <div className={styles.modal}>
           <button className={styles.closeButton} onClick={modalData.onClose}>
-            <img src="/assets/close-x.svg" alt="Close Modal" />
+            <img src={closeIcon} alt="Close Modal" />
           </button>
           <div
             className={[styles.modalContent, modalData.textContent ?? styles.vertical].join(" ")}

@@ -90,7 +90,9 @@ CSS Modules are bundled. The library includes default styles and layout. If you 
 
 ## Assets
 
-The component references an icon at `/assets/close-x.svg` for the close button image. Ensure this asset exists and is served in your host application at that path, or replace it by forking the component and using your own icon.
+An SVG close icon is bundled with the library. You do not need to host it yourself. It is imported from the component source and emitted by the bundler, so consumers don’t manage its path.
+
+If you want to use your own icon, fork the component and replace the import in `src/ModalComponent.tsx`.
 
 ## TypeScript
 
