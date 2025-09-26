@@ -10,7 +10,7 @@ export const ModalComponent = (props: ModalProps) => {
     if (title)
       return (
         <>
-          <h1>{title}</h1>
+          <h1 data-selector="modal-title">{title}</h1>
         </>
       );
   };
@@ -21,7 +21,7 @@ export const ModalComponent = (props: ModalProps) => {
     if (text)
       return (
         <>
-          <span>{text}</span>
+          <span data-selector="modal-content-text">{text}</span>
         </>
       );
   };
@@ -30,6 +30,7 @@ export const ModalComponent = (props: ModalProps) => {
     return (
       <>
         <button
+          data-selector="modal-confirm-button"
           className={[styles.modalActionButton, styles.btnSuccess].join(" ")}
           onClick={modalData.onConfirm}
         >
@@ -43,6 +44,7 @@ export const ModalComponent = (props: ModalProps) => {
     return (
       <>
         <button
+          data-selector="modal-cancel-button"
           className={[styles.modalActionButton, styles.btnDanger].join(" ")}
           onClick={modalData.onCancel}
         >
@@ -54,10 +56,14 @@ export const ModalComponent = (props: ModalProps) => {
 
   return (
     <>
-      <div className={styles.modalContainer}>
+      <div className={styles.modalContainer} data-selector="modal-container">
         <div className={styles.modal}>
-          <button className={styles.closeButton} onClick={modalData.onClose}>
-            <img src={closeIcon} alt="Close Modal" />
+          <button
+            className={styles.closeButton}
+            onClick={modalData.onClose}
+            data-selector="modal-close-button"
+          >
+            <img src={closeIcon} alt="Close Modal" data-selector="modal-close-icon" />
           </button>
           <div
             className={[styles.modalContent, modalData.textContent ?? styles.vertical].join(" ")}

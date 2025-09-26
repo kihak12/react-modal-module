@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           registry-url: "https://registry.npmjs.org"
@@ -27,6 +27,11 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint
+
+      - name: Run Cypress component tests
+        uses: cypress-io/github-action@v6
+        with:
+          component: true
 
       - name: Build package
         run: npm run build
