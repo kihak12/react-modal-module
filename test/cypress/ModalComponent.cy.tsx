@@ -29,8 +29,6 @@ describe("ModalComponent", () => {
       cy.get(modal.confirmButton).should('exist');
       cy.contains(modal.confirmButton, 'Confirm');
       cy.get(modal.cancelButton).should('not.exist');
-
-      cy.contains(modal.title, 'This expect should make github action fail, and don\'t push to npm registry')
   });
 
   it("should render provided title and content", () => {
